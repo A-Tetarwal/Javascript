@@ -29,7 +29,7 @@ console.log(student["age"]);
 console.log(student.fullName);
 console.log(student.gpa);
 
-
+// Objects
 // creating an object for a product listed on eCommerce website
 const pen={
     Name: "Parker Jotter Standard CT Ball Pen",
