@@ -1,4 +1,4 @@
-# JavaScript Learning Repository
+# JavaScript Practice Repository
 
 Welcome to my JavaScript Learning Repository! This repository is a collection of resources, code snippets, and projects aimed at helping beginners and intermediate learners grasp the fundamentals and advanced concepts of JavaScript programming.
 
