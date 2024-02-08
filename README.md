@@ -2,15 +2,6 @@
 
 Welcome to my JavaScript Learning Repository! This repository is a collection of resources, code snippets, and projects aimed at helping beginners and intermediate learners grasp the fundamentals and advanced concepts of JavaScript programming.
 
-## Table of Contents
-
-1. Getting Started
-2. Topics Covered
-3. Code Snippets
-4. Projects
-5. Contributing
-6. Resources
-
 
 ## Topics Covered
 
