@@ -132,9 +132,27 @@ let newStri= stri.toUpperCase(); // or stri = stri.toUpperCase(); tb bhi kaam ho
 console.log(newStri);
 
 /*
-str.slice(start, end?) ~ returns part of string;
+str.slice(start, end?) ~ returns part of string, end value non-inclusive hoti hai;
 str1.concat(str2) ~ join str2 with str1;
 str.replace(searchVal, newVal);
 str.charAt(idx);
 */
 
+let strin= '012345679';
+console.log(strin.slice(1, 4));
+let str1= 'Hello';
+let str2= ' Jaani';
+console.log(str1.concat(str2)); // or this can be done via eg. let res = str1+str2; then console.log(res);
+console.log(strin.replace(9, 8)); // also this way: console.log(str1.replace('llo', 'y'));
+// there also exist replace all, following is the example
+let str3= 'Helololo';
+console.log(str3.replaceAll("lo", "y"));
+console.log(str2.charAt(1));
+
+
+
+// practice questions 
+/* Q1- prompt the user to enter their full name. Generate a username for them based on the input. Start the username with @, followed by their full name and ending with the fullname length*/
+console.log('Q1');
+let fullName= prompt('enter your fullName(without spaces)');
+console.log(`username: @${fullName}${fullName.length}`);
