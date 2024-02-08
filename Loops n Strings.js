@@ -73,7 +73,7 @@ console.log("total even no. = "+totalNo);
 // practice question 2: create a game wher you start with any random game number. Ask the user to keep guessing the game number until the user enters correct value
 
 // version 1
-let guess= prompt("guess a number");
+/*let guess= prompt("guess a number");
 for(let p=1; p>=0; p++){
     
     if(guess==3){
@@ -84,7 +84,7 @@ for(let p=1; p>=0; p++){
         guess= prompt("you guessed wrong number. Guess again")
         console.log("you guessed wrong number");
     }
-}
+}*/
 
 // version 2
 
@@ -95,4 +95,46 @@ for(let p=1; p>=0; p++){
 //     userNum = prompt("you guessed wrong. Guess again")
 // }
 // console.log("congrats, you entered the right no.")
+
+
+
+
+
+// Strings part
+
+// strings is a sequence of characters used to represent text
+let string = "ApnaCollege";
+console.log(string[1])
+
+// template literals
+let specialString= `This is a template literal`;
+console.log(specialString)
+
+// practical use of template literal
+let obj={
+    item:"pen",
+    price:10
+}
+
+console.log("the cost of", obj.item, "is", obj.price, "Rs");
+// above thing can be done in a better way without using multiple quotes, see below
+let output = `the cost of ${obj.item} is ${obj.price} Rs`;
+console.log(output);
+// or
+console.log(`the cost of ${obj.item} is ${obj.price} Rs`);
+console.log(`this is a template literal ${1+2+3}`);
+
+// string methods ~ 1. str.toUpperCase()  2. str.toLowerCase()  3. str.trim()-> removes whitespaces
+let stri = "ApnaCollege";
+console.log(stri);
+
+let newStri= stri.toUpperCase(); // or stri = stri.toUpperCase(); tb bhi kaam ho jayega; original pe kaam nhi krta cuz strings are immutable
+console.log(newStri);
+
+/*
+str.slice(start, end?) ~ returns part of string;
+str1.concat(str2) ~ join str2 with str1;
+str.replace(searchVal, newVal);
+str.charAt(idx);
+*/
 
