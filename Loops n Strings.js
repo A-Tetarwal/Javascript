@@ -156,3 +156,5 @@ console.log(str2.charAt(1));
 console.log('Q1');
 let fullName= prompt('enter your fullName(without spaces)');
 console.log(`username: @${fullName}${fullName.length}`);
+
+// third one done
