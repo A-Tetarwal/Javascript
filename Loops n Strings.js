@@ -126,7 +126,9 @@ console.log(`this is a template literal ${1+2+3}`);
 
 // string methods ~ 1. str.toUpperCase()  2. str.toLowerCase()  3. str.trim()-> removes whitespaces
 let stri = "ApnaCollege";
-console.log(stri);
+console.log(stri); 
+/* can be done this way too: let string= "Jaani";
+console.log(string.toUpperCase());*/
 
 let newStri= stri.toUpperCase(); // or stri = stri.toUpperCase(); tb bhi kaam ho jayega; original pe kaam nhi krta cuz strings are immutable
 console.log(newStri);
