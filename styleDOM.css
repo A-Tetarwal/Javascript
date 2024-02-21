@@ -1,0 +1,23 @@
+h1{
+    color: rgb(82, 235, 199);
+    transform: rotateX('4');
+    text-decoration:wavy;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: black;
+    font-family: monospace;
+    border: 0.5px;
+}
+
+h1:hover{
+    text-transform: uppercase;
+    transition-duration: 5ms;
+}
+button{
+    background-color: rgb(110, 56, 236);
+    color: rgb(255, 255, 255);
+    border-radius: 7%;
+}
+button:hover{
+    transform: scaleX(1.2);
+    transition-duration: 4ms;
+}

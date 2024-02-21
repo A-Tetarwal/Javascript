@@ -105,7 +105,7 @@ const countVowel = (str)=>{
     console.log(`number of vowels in your string '${str}' is = ${vowelCount}`);
 }
 
-
+// forEach loop in arrays -> usually arrow function ki form mein likhte hain
 // callback function => a callback funtion passed as an argument to another function.
 // javascript mein hum functions ko parameters ki tarah pass kar sakte hain
 
@@ -117,3 +117,10 @@ function abc(){
 function agie(abc){  // abc is passed as a parameter
     return abc;
 }
+
+let arr = [2,3,5,7,9];
+arr.forEach((val)=> {
+    console.log(`square of ${val} is ${val*val}`)
+})
+
+// higher orfeder functions vo\ hote hain jo ya to function as a parameter lete hain ya function return krte hain
