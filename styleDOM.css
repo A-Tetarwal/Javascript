@@ -1,23 +1,28 @@
 h1{
-    color: rgb(82, 235, 199);
+    color: rgb(0, 0, 0);
     transform: rotateX('4');
     text-decoration:wavy;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    background-color: black;
-    font-family: monospace;
+    background-color:white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     border: 0.5px;
 }
 
-h1:hover{
-    text-transform: uppercase;
-    transition-duration: 5ms;
-}
 button{
-    background-color: rgb(110, 56, 236);
+    background-color: rgb(255, 0, 170);
     color: rgb(255, 255, 255);
     border-radius: 7%;
+    border-color: rgb(255, 0, 170);
 }
-button:hover{
-    transform: scaleX(1.2);
-    transition-duration: 4ms;
+
+#com{
+    color: rgb(255, 221, 0);
+    background-color: black;
+}
+
+#bulb{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 4px solid black;    
 }
