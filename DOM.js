@@ -62,8 +62,3 @@ d.addEventListener("click", function(){
     d.style.backgroundColor="white";
     d.innerHTML= "About me: IIIT Vadodara, BTech. CSE"
 })
-
-
-let btn= document.querySelector("#btn");
-
-btn.addEventListener
