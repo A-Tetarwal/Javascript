@@ -1,28 +1,35 @@
-let button= document.querySelector("button");
+let Add= document.querySelector("#add");
+let strange= document.querySelector("h5");
 
 let flag=0;
-button.addEventListener("click", function(){
+Add.addEventListener("click", function(){
     if(flag==0){
-        button.style.backgroundColor="white";
-        button.innerHTML="Request Sent";
-        button.style.color="black";
+        Add.style.backgroundColor="white";
+        Add.innerHTML="Request Sent";
+        Add.style.color="black";
+        Add.style.backgroundColor="#dadada";
         flag=1;
 
         setTimeout(function() {
             alert("Friend Added");
-            button.innerHTML="Friend";
+            Add.innerHTML="Remove";
         }, 500); // Adjust the delay time (in milliseconds) as needed
         
+        strange.innerHTML="Friend";
+        strange.style.color="green";
         
     }else{
-        button.style.backgroundColor="#3b5998";
-        button.innerHTML="Add Friend";
-        button.style.color="white";
+        Add.style.backgroundColor="#3b5998";
+        Add.innerHTML="Add Friend";
+        Add.style.color="white";
         flag=0;
 
         setTimeout(function() {
-            alert("Cancelled Request");
+        alert("Removed from Friends");
         }, 500); // Adjust the delay time (in milliseconds) as needed
 
-    }
+        strange.innerHTML="Stranger";
+        strange.style.color="rgb(255, 0, 200)";
+    }    
 })
+
