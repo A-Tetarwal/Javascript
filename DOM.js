@@ -62,3 +62,11 @@ d.addEventListener("click", function(){
     d.style.backgroundColor="white";
     d.innerHTML= "About me: IIIT Vadodara, BTech. CSE"
 })
+
+
+// seleting multiple elements at a time
+let h= document.querySelectorAll("p");
+
+h.forEach(function(e){
+    console.log(e);
+})
