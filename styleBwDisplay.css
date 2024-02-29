@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+    color: #dfdfdf;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+#bw{
+    text-align: center;
+}
+
+
+button{
+    color: black;
+    background-color: white;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 2px;
+}
