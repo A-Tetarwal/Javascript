@@ -1,0 +1,16 @@
+{
+  "name": "javascript2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node js1.js",
+    "dev": "nodemon js1.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
