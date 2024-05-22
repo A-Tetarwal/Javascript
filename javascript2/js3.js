@@ -37,7 +37,7 @@ JavaScript
 This is because both operands are of the same type (number) and have the same value.
 However, the following code will return false:
 JavaScript
-1 == "1";
+1 === "1";
 This is because the operands are of different types (number and string). The double equals operator will perform type coercion and convert the string "1" to the number 1 before comparison. However, the triple equals operator will not perform any type coercion, so the two operands will be considered different.
 It is generally recommended to use the triple equals operator instead of the double equals operator, as it can help to avoid unexpected results.
 Here are some more examples of the triple equals operator in use:
