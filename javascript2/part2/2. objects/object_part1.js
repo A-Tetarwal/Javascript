@@ -14,7 +14,7 @@ const JsUser = {
     location: "Jaipur",
     email: "ashish@google.com",
     isLoggedIn: false,
-    latLoginDays: ["Monday", "Saturday"]
+    latestLoginDays: ["Monday", "Saturday"]
 }
 
 // first way to access, use it in general
