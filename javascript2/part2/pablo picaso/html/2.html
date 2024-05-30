@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: rgb(65, 65, 65); color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">मंगलवार/Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        const parent = document.querySelector(".parent");
+        // console.log(parent);
+
+        // console.log(parent.children); // without querySelectorAll
+        // console.log(parent.children[1].innerHTML);
+
+        // for (let index = 0; index < parent.children.length; index++) {
+        //     console.log(parent.children[index].innerHTML);            
+        // }
+        
+        // styling
+        parent.children[1].style.color = 'orangered'
+
+        // console.log(parent.firstElementChild); // getting first element from parent
+        // console.log(parent.lastElementChild);  // getting last element from parent
+
+        // child se parent select krna
+        // const dayOne = document.querySelector('.day');
+        // console.log(dayOne);
+        // console.log(dayOne.parentElement);
+        // console.log(dayOne.nextElementSibling);
+
+        console.log("NODES: ", parent.childNodes);
+
+    </script>
+</body>
+</html>
