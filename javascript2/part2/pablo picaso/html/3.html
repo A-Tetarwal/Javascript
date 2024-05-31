@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naya document</title>
+</head>
+<body style="background-color: rgb(45, 45, 45); color: white;">
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1);
+    div.setAttribute("title", "generated");
+    div.style.backgroundColor = "orangered";
+    div.style.width = "10px";
+    div.style.height = "10px";
+    div.style.padding = "10px"; // yahan tk sab ban gya hai, memory me aa gya lekin page pe attach nhi hoga
+    div.innerText = "CodeSpace"; // ye text k overwrite krta hai
+    const addText = document.createTextNode("Text one");
+    div.appendChild(addText);
+
+    // ab attach krte hain
+    document.body.appendChild(div)
+
+    // console.log(document.createElement("h1"));
+</script>
+</html>
