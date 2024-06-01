@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 4</title>
+</head>
+<!-- style="list-style: none;" -->
+<body style="background-color: rgb(59, 59, 59); color: white;">
+    <ul  class="language">
+        <li >Javascript</li>
+    </ul>
+</body>
+<script>
+    // basic tarika
+    addListItem = (extension, name, colour)=>{
+        const li = document.createElement('li');
+        li.setAttribute("extension",`${extension}`);
+        li.innerText = `${name}`; // direct bhi de skte hain
+        li.style.color = `${colour}`;
+        document.querySelector('.language').appendChild(li); // attached here
+    }
+
+    addListItem("py", "Python", "white"); // isme ek dikkat hai, isko poora tree traverse krna pad raha hai, isliye hmesha efficient nahin hota
+    addListItem("ts","Typescript", "white");
+    console.log(addListItem);
+
+
+    // funciton with optimized approach
+    appOptimizedListItem = (langName) => {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+    }
+    appOptimizedListItem("golang");
+
+
+    // now, editing and remove above elements
+
+    // edit - 1
+    const secondlang = document.querySelector("li:nth-child(2)");
+    // console.log(secondlang); // checking secondLang
+    // secondlang.innerHTML = "Mojo"; // ye value ko replace kr rha
+    // secondlang.appendChild(document.createTextNode("Mojo")); // ye og value ke bagal me new value add kr rha
+    const newLi =document.createElement('li');
+    newLi.textContent  ="Mojo";
+    secondlang.replaceWith(newLi);
+    // console.log(newLi);// checking newLi
+    // console.log(secondlang); // secondLang storage me vaise ka vaisa hi hai, not changed in place
+
+    // edit - 2
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li >Ruby</li>"
+
+    //remove
+    const lastlang = document.querySelector("li:last-child");
+    lastlang.remove();
+</script>
+</html>
