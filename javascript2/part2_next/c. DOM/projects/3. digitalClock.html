@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On time</title>
+</head>
+<body style="color: white; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+
+    <div id="banner"><span>your locale time</span></div>
+    <div id="clock" style="background-color: orangered; height: 30px; width: 90px; border-radius: 2px; margin: 2px; display: flex; align-items: center; justify-content: center;"></div>
+
+</body>
+<!-- script here -->
+<script>
+    const clock = document.querySelector("#clock");
+    // const clock = document.querySelector("#clock");
+
+    // storing and displaying time
+    // let date = new Date();
+    // clock.innerHTML = date.toLocaleTimeString(); // to update it each second, we'll use setInterval function
+    
+    setInterval(function(){
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+</script>
+</html>

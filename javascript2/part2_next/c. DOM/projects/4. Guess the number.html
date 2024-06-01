@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guess</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center;">
+
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+    <button>Guess</button>
+    <br>
+    <div id="guessed"></div>
+</body>
+
+<script>
+    const button = document.querySelector('button')
+
+    button.addEventListener("click", (event)=>{
+        event.preventDefault();
+
+        const number = parseInt(document.querySelector("#number").value);
+        const guess = Math.round(Math.random()*10);
+        const guessed = document.querySelector("#guessed");
+
+        if(number === guess){
+            guessed.innerHTML = `you guessed it right ${number}`;
+        }
+        else {
+            guessed.innerHTML = `nope try again ${number}`;
+        }
+    })
+</script>
+</html>

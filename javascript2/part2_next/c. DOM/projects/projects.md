@@ -85,7 +85,7 @@ console.log('Project1');
 ## BMI calculator
 ### Soloution Code
 ```javascript
-console.log('Project2')
+console.log('Project2');
     const form = document.querySelector('form');
 
     // yahan pe agar height aur wt ko lenge to empty values milengi, aur hme agr jis time pe click kr rhe hai usi time pe value lena chahte hain to usi event yani ki form me lena in values ko better rhega. basically it depends on our use case.
@@ -115,4 +115,45 @@ console.log('Project2')
     })
     // console.log(height);
     // console.log(weight);
+```
+
+# Project three
+## Digital clock
+### Solution Code
+```javascript
+console.log("Project3");
+    const clock = document.querySelector("#clock");
+    // const clock = document.querySelector("#clock");
+
+    // storing and displaying time
+    // let date = new Date();
+    // clock.innerHTML = date.toLocaleTimeString(); // to update it each second, we'll use setInterval function
+    
+    setInterval(function(){
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+```
+
+# Project four
+## Guess the number
+## Solution Code
+```javascript
+console.log("Project4");
+    const button = document.querySelector('button')
+
+    button.addEventListener("click", (event)=>{
+        event.preventDefault();
+
+        const number = parseInt(document.querySelector("#number").value);
+        const guess = Math.round(Math.random()*10);
+        const guessed = document.querySelector("#guessed");
+
+        if(number === guess){
+            guessed.innerHTML = `you guessed it right ${number}`;
+        }
+        else {
+            guessed.innerHTML = `nope try again ${number}`;
+        }
+    })
 ```
