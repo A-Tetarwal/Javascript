@@ -4,7 +4,7 @@
 ### Solution Code
 
 ```javascript
-console.log("A-Tetarwal");
+console.log('Project1');
     // // ______________________ method - 1: basic ______________________
     // // const body = document.querySelector("body");
 
@@ -79,4 +79,40 @@ console.log("A-Tetarwal");
             }
         })
     })
+```
+
+# Project two
+## BMI calculator
+### Soloution Code
+```javascript
+console.log('Project2')
+    const form = document.querySelector('form');
+
+    // yahan pe agar height aur wt ko lenge to empty values milengi, aur hme agr jis time pe click kr rhe hai usi time pe value lena chahte hain to usi event yani ki form me lena in values ko better rhega. basically it depends on our use case.
+    // const height = parseInt(document.querySelector('#weight').value);
+
+    // now
+    form.addEventListener("submit", (evnt)=>{
+        evnt.preventDefault();
+
+        // inko idhar select krna better hai, outerScope me nahin
+        const weight = parseInt(document.querySelector('#weight').value); // isko int me parse kr denge, agr string me input hoga to
+        const height = parseInt(document.querySelector('#height').value);
+        const results = document.querySelector('#results');
+
+        if (height === 0 || height < 0 || isNaN(height)) {
+            results.innerHTML = `Please give valid height ${height}` 
+        }
+        else if (weight === 0 || weight < 0 || isNaN(weight)) {
+            results.innerHTML = `Please give valid weight ${weight}` 
+        }
+        else{
+            results.innerHTML = (weight / ((height*height)/10000)).toFixed(2);
+        }
+
+
+        const button = document.querySelector('Submit');
+    })
+    // console.log(height);
+    // console.log(weight);
 ```
