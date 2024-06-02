@@ -1,6 +1,5 @@
 # Project oen: Colora
 ## The color changer
-
 ### Solution Code
 
 ```javascript
@@ -137,7 +136,7 @@ console.log("Project3");
 
 # Project four
 ## Guess the number
-## Solution Code
+### Solution Code
 ```javascript
 console.log("Project4");
     const button = document.querySelector('button')

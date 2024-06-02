@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+</head>
+<body style="background-color: black; color: white;">
+    <!-- random number, number b/w 1&100, guess right number, previous guesses ka array, guesses remaining ko lower down krna hai har ek ckcik pe -->
+    <form action="">
+        <h2>Guess the right number</h2>
+        <label for="number"></label>
+        <input type="number" id="number" placeholder="between 1 & 100">
+        <button>Check</button>
+        <div id="result"></div>
+
+        <p>Previous guess: <div id="prev"></div></p>
+        remaining guesses: <div id="remaining"></div>
+    </form>
+</body>
+
+<script>
+    const form = document.querySelector('form');
+    let prevGuess = [];
+    let remGuess = 10;
+    const rGuess = document.querySelector("#remaining");
+    const pGuess = document.querySelector("#prev");
+
+    let remGuessVal = remGuess.innerHTML;
+    remGuessVal = remGuess;
+    
+    form.addEventListener("submit", (evnt)=>{
+        evnt.preventDefault();
+        const button = document.querySelector('button');
+
+        const number = parseInt(document.querySelector("#number").value);
+        const random = Math.round(Math.random()*10);
+        const result = document.querySelector("#result");
+
+
+        if (number<=0 || number>100) {
+            result.innerHTML = `enter a valid value ${number}`
+        }
+        else if (number === random){
+            result.innerHTML = `guessed it right ${number}`
+        }
+        else {
+            result.innerHTML = `do it again ${number}`
+
+            prevGuess.push(number);
+            console.log(prevGuess[prevGuess.length]);
+
+            for (let index = 0; index < prevGuess.length; index++) {
+                pGuess.innerHTML = prevGuess[index];
+                console.log(prevGuess[index]);
+            }
+
+            remGuess--;
+        }
+
+        if (remGuess <= 0) {
+            result.innerHTML = `Game over. The correct number was ${random}.`;
+            form.querySelector('button').disabled = true;
+        }
+        rGuess.innerHTML = remGuess;
+    })
+</script>
+</html>
