@@ -34,7 +34,7 @@
         const button = document.querySelector('button');
 
         const number = parseInt(document.querySelector("#number").value);
-        const random = Math.round(Math.random()*10);
+        const random = Math.round(Math.random()*100 + 1);
         const result = document.querySelector("#result");
 
 
@@ -64,5 +64,21 @@
         }
         rGuess.innerHTML = remGuess;
     })
+
+
+    // this is approach 2, above is raw-approach
+
+    // consts honge randomNumber, userInput, submit, guessSlot, remaining guesses, lowOrHi, and startOver.
+    // let honge prevGuess = [], and numGuess = 1, and playGame = true.
+    // ek naya element p banana hai
+
+    // functions are listed below
+    validateGuess(guess) // value valid hai ya nahin
+    checkGuess(guess) // validation ke baad value check krenga, correct incorrect , low high, vgera ka msg
+    displayGuess(guess) // values clean krega, update krega array ko, guess remaining ko, innerHTML me changes krenge
+    displayMsg(message) // idhar se message display hoga
+    endGame()
+    newGame()
+
 </script>
 </html>

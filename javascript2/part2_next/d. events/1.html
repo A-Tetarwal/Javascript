@@ -1,0 +1,105 @@
+<!-- NOTE: TO REVISE, COMMENT OUT THE CODE AND THEN READ IT -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: black; color: rgb(255, 255, 255); height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <h1 style="text-align: center;">Fi-4 Web</h1>
+    <main>
+        <!-- <dialog open>
+            This is an open dialog window
+        </dialog> -->
+        <div id="images">
+            <img src="./2. images/fi4.png" alt="fi4png" id="fi4png" style="height: 100px;">
+            <img src="./2. images/fi4.svg" alt="fi4svg" id="fi4svg" style="height: 100px;">
+            <img src="./2. images/fi4Logo.png" alt="logopng" id="logopng" style="height: 100px;">
+            <img src="./2. images/fi4Logo.svg" alt="logosvg" id="logosvg" style="height: 100px;">
+        </div>
+        <details style="display: flex; flex-direction: column;">
+            <summary>clickOnWhat</summary>
+            <a href="https://a-tetarwal.github.io/Tailwind-Practice/">Polity Dance</a>
+        </details>
+    </main>
+</body>
+
+<script>
+    // const dialog = document.createElement('dialog');
+    // const details = document.querySelector('details');
+    // console.log(dialog);
+    // const logosvg = document.getElementById('logosvg');
+    // logosvg.addEventListener("click", (e)=>{
+    //     console.log('logosvg clicked');
+    //     const addText = document.createTextNode("LogoSvg clicked ");
+    //     details.appendChild(addText);
+    //     document.body.appendChild(details);
+    // })
+
+    // jo jo events me padhna hai
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    // ____________ learning code ____________ (comment out krke padhlo)
+
+    // // isme default false(true false is for event propagation) rehta hai, change krna apne use case pe depend krta hai
+    // document.querySelector("#images").addEventListener("click", function(e){
+    //     console.log("clicked inside the images");
+    // }, false) // dono true honge, ya parent true child false to pehle 'img' execute hoga. // capturing - jata hai top se bottom
+
+    // document.querySelector("#logosvg").addEventListener("click", function(e){
+    //     console.log("clicked on the logosvg");
+    //     // e.stopPropagation();  // ye kaam aata hai agr hme event propagate nhin krna hai to, if we want ot keep them(parent and child events) separate
+    // }, false) // dono false honge, ya parent wala false hoga to 'logosvg' pehle execute hoga. // bubbling - bubble hoke ooper(parent) ke element tk event chla jayega
+
+    // // agar pehle child execute(dono ya parent false) hai concept bubbling ka hai, other wise it is concept of capturing.
+
+    // document.querySelector("a").addEventListener("click", (e)=>{
+    //     console.log("polity-dance clicked");
+    //     e.preventDefault();
+    //     // e.stopPropagation();
+    // })
+
+
+
+    // ____________ code practice ____________(image gayab krne ka code)
+
+    // // approach - 1
+
+    // const images = document.querySelectorAll("img");
+    // // console.log(images);
+    // images.forEach(img => {
+    //     img.addEventListener("click",(e)=>{
+    //         // img.style.scale = "2"; // ye to image bada krne ka tha, ab gayab krne ka likhenge
+    //         // img.style.opacity = "0"; // ye image gayab nahin kr rha, bs opacity km kr rha hai
+    //     })
+    // })
+
+
+    // // approach - 2
+    document.querySelector('#images').addEventListener("click", (e)=>{
+        // console.log(e.target.parentNode); // parentNode => parent element
+        // let removeIt = e.target; // jahan zarurat page parentNode bhi use kr lena, jaise ul>li>img
+        // removeIt.remove();  // pehla tarika
+        // removeIt.parentNode.removeChild(removeIt); // hm jo use krna chahein kr skte hain
+        // upar wale tarike me kayi bar dikkat(confusion agr) ho jaati hai, to uske liye below method 
+
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') { // capital me likhna
+            console.log(e.target.id);
+            let removeIt = e.target;
+            removeIt.remove();
+        }
+
+    }, false);
+
+    // again 
+</script>
+
+</html>
