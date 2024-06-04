@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async three</title>
+</head>
+<body>
+    <h1 id="h1">Async three</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    // setInterval(console.log("Hello"), 1000); // aise nahin likh skte
+
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+    // const intervalId = setInterval(sayDate, 2000, "hui"); // isme parameters bhi paas kr skte hain, ek 3rd parameter pass kr skte hain
+    // oopar wale ko start aur stop button click ke according chalane ke liye ek function me store krna pdega
+
+    let intervalId;
+
+    const startInterval = ()=>{
+        intervalId = setInterval(sayDate, 2000, "hui");
+    }
+
+    document.querySelector("#start").addEventListener("click", ()=>{
+        console.log("started");
+        startInterval();
+    })
+
+    document.querySelector("#stop").addEventListener("click", ()=>{
+        clearInterval(intervalId);
+        console.log('stopped');
+    })
+    
+
+</script>
+
+</html>

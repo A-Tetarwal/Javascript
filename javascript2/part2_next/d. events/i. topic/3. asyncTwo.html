@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async two</title>
+</head>
+<body>
+    <h1 id="h1">Async two</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    const changeText = () => {
+        document.querySelector('#h1').innerHTML = "Functionality";
+    }
+    const changeMe = () => {
+        setInterval(changeText, 2000);
+    }
+
+    document.querySelector('#start').addEventListener("click", (e)=>{
+        changeMe();
+        console.log("started");
+    })
+
+    document.querySelector('#stop').addEventListener("click", (e)=>{
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+        // document.querySelector('#h1').innerHTML = "Async two";
+    })
+    
+</script>
+
+</html>

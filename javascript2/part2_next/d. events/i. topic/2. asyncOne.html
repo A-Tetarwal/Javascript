@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1 id="h1">Async</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    // clearInterval() & clearTimeout() bhi hote hai
+    // ek method jo api ko bhi call krta hai
+
+    const sayAshish = () => { 
+        console.log("Hi");
+    }
+
+    // function hello(){}; const Hari = function(){}; way to declare a function normally
+    
+    setTimeout(sayAshish, 2000);  // sayAshish() -> execution;  sayAshish -> reference
+
+    setInterval(sayAshish ,1000);  // interval maangta hai, repeats after an interval
+
+    const changeText = () => {
+        document.querySelector('#h1').innerHTML = "Functionality";
+    }
+    // using time function for above
+    const changeMe = setTimeout(changeText, 2000);
+
+    // ab upar wale ko rokne ka tarika 
+    // clearTimeout(changeMe); // hme aise isko use nahin krna chahiye, phir to timeout se kiya aur hata bhi diya uska koi mtlb nahin hai
+    // ab isko kisi event pe use krte hain
+    document.querySelector('button').addEventListener("click", (e)=>{
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+    })
+    
+</script>
+
+</html>

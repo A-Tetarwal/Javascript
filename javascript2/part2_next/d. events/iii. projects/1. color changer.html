@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changer</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center;">
+    <h2>Use buttons to simulate colors</h2>
+    <div id="buttons">
+        <button id="start" style="color: rgb(20, 110, 110);">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <h4>(Refresh to restart)</h4>
+</body>
+
+<script>
+    // hmko iske liye random color(hex code mein) generator krna pdega
+    const randomColor = () => {
+        const hex = '0123456789ABCDEF';
+        let color = "#"; // hex color code starts from '#'
+        for(let i=0; i<6; i++){
+            color += hex[Math.floor(Math.random() * 16)];  // updating colour string
+        }
+        return color;
+    }
+
+    // andar hex value kaise generate ho rahi hai
+    const hex = '0123456789ABCDEF';
+    const into16 = Math.random()*16;  /* random value generated into 16 
+    (the number 16 is used in the multiplication step because 
+    there are 16 possible hexadecimal digits (0-9 and A-F).) */
+    console.log(into16);
+    console.log(Math.floor(into16));  // floor value milega
+    console.log(hex[Math.floor(into16)]); /* Jo floor value mili hai, hex 
+    string ke uss index se value mil jayegi */
+
+    const body = document.querySelector('body');
+    
+    let intervalId;
+    const startInterval = ()=>{
+        intervalId = setInterval(()=>{
+            body.style.backgroundColor = randomColor();
+            console.log(randomColor());
+        }, 500)
+    }
+
+    document.querySelector("#start").addEventListener("click", ()=>{
+        startInterval();
+        document.querySelector("#start").disabled = true;
+    })
+
+    document.querySelector("#stop").addEventListener("click", ()=>{
+        clearInterval(intervalId);
+        document.querySelector("#start").disabled = false;
+    })
+
+</script>
+
+</html>
