@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changer</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center;">
+    <h2>Use buttons to simulate colors</h2>
+    <div id="buttons">
+        <button id="start" style="color: rgb(20, 110, 110);">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <h4>(Refresh to restart)</h4>
+</body>
+
+<script>
+    // hmko iske liye random color(hex code mein) generator krna pdega
+    const randomColor = () => {
+        const hex = '0123456789ABCDEF';
+        let color = "#"; // hex color code starts from '#'
+        for(let i=0; i<6; i++){
+            color += hex[Math.floor(Math.random() * 16)];  // updating colour string
+        }
+        return color;
+    }
+
+    // we'll do it without using disabled
+    let intervalId;
+    const startChangingColor = () => {
+        const changeBgColor = () => {
+            document.querySelector('body').style.backgroundColor = randomColor();
+        }
+
+        if (!intervalId) {
+            intervalId = setInterval(changeBgColor, 500);
+        }
+    }
+
+    const stopChangingColor = () => {
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+
+    document.querySelector("#start").addEventListener("click", startChangingColor)
+    document.querySelector("#stop").addEventListener("click", stopChangingColor)
+
+
+</script>
+
+</html>

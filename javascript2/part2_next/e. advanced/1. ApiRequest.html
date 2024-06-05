@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body style="background-color: black; color: white;">
+    Chal body dikha 
+</body>
+
+<script>
+    const requestUrl1 = 'https://api.github.com/users/hiteshchoudhary'; // iss link ko variable me store krna better hai to use again
+    const xhr1 = new XMLHttpRequest() // kyuki ye ek class hai to hum new key word use kr rhe hain
+    xhr1.open('GET', requestUrl1);
+
+    console.log(xhr1.readyState); // ye to ek hi baar state track hui, continuously track krne ke kiye neeche code hai
+    
+    xhr1.onreadystatechange = function () {
+        console.log(xhr1.readyState);
+
+        // ab state ko detect krenge
+        if (xhr1.readyState === 4) {
+            // console.log(this.responseText); // pehle khali 'responseText' use kiaya error aaya, present context ke liya 'this' bhi use krna hai
+
+            // ab 'this.responseText' ko variable me hold krenge
+            const data = this.responseText;
+            console.log(data);
+            // again
+            console.log(data.followers); // ye koi object nahin hai jo aise kaam krega
+            console.log(typeof data); // string
+            const dataObject = JSON.parse(data); // converting string to object
+            console.log(typeof dataObject); // object
+
+            // now accessing
+            console.log(dataObject.followers);
+            console.log(dataObject.avatar_url);
+
+            // yahan tk kaam ho gya hai, ab '2. ApiRequest.html' me hm cards banayenge
+
+        }
+    }
+
+    xhr1.send()
+
+
+</script>
+
+</html>
