@@ -1,0 +1,122 @@
+<!DOCTYPE html style="height: 100%; width: 100%">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cards</title>
+</head>
+
+<body
+    style="background-color: #2a2b2b; color: white; display: flex; justify-content: center; align-items: center; height: auto; width: auto;">
+    <div id="boxes" style="display: flex; justify-content: center; align-items: center;">
+        <a id="one">
+            <div id="Hitesh">
+                <img alt="">
+                <div id="data">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+        </a>
+        <a id="two">
+            <div id="Ashish">
+                <img alt="">
+                <div id="data">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+
+<script>
+    // card style
+    const cardStyle = (id) => {
+        const div = document.getElementById(`${id}`);
+        div.style.display = 'flex';
+        div.style.flexDirection = 'column';
+        div.style.alignItems = 'centre';
+        div.style.justifyContent = 'centre';
+
+        div.style.height = '255px';
+        div.style.width = '180px';
+        div.style.margin = '10px';
+        div.style.padding = '10px'
+        div.style.borderRadius = '10px';
+
+        div.style.backgroundColor = 'white';
+        div.style.color = 'black'
+    }
+
+    cardStyle('Hitesh');
+    cardStyle('Ashish');
+
+    // setting links for a tags
+    const setLink = (idOfAnchorTag, urlGithub) => {
+        const a = document.querySelector(`${idOfAnchorTag}`);
+        a.setAttribute('href', `${urlGithub}`);
+
+        a.style.textDecoration = 'none';
+        a.style.padding = 'none';
+    }
+
+    // image add krna
+    const addImage = (id, url) => {
+        const img = document.querySelector(`${id}`);
+
+        // img.style.backgroundImage = `${url}`; isse image nahin milegi, na hi set hogi, hogi to as bg hogi, jo pehle se koi color hai. Don't use this way
+        img.setAttribute('src', `${url}`); // isse image 
+        img.style.height = "180px";
+        img.style.width = "180px";
+        // img.style.margin = '10px'
+        img.style.borderRadius = '10px'
+    }
+
+    // name and followers
+    const addAbout = (id, url1, url2) => {
+        const name = document.querySelector(`${id} h3`);
+        const followers = document.querySelector(`${id} p`);
+
+        name.innerHTML = `${url1}`;
+        followers.innerHTML = `Followers: ${url2}`;
+
+        name.style.margin = '20 0 0 0';
+        followers.style.margin = '0';
+    }
+
+    const API = (urlMain, idOfDiv, idOfAnchorTag) => {
+        const xhr1 = new XMLHttpRequest();
+        xhr1.open('GET', urlMain);
+
+        console.log(xhr1.readyState);
+
+        xhr1.onreadystatechange = function () {
+            console.log(xhr1.readyState);
+
+            if (xhr1.readyState == 4) {
+                const data = this.responseText;
+                const dataObject = JSON.parse(data);
+                console.log(typeof dataObject);
+                console.log(dataObject);
+                console.log(dataObject.followers);
+
+                // adding content
+                addImage(`${idOfDiv} img`, dataObject.avatar_url); // ye shyd theek hai
+                addAbout(`${idOfDiv}`, dataObject.name, dataObject.followers);
+
+                // setting links for cards
+                setLink(`${idOfAnchorTag}`, dataObject.html_url)
+            }
+        }
+        xhr1.send();
+    }
+
+    API('https://api.github.com/users/hiteshchoudhary', '#Hitesh', '#one');
+    API('https://api.github.com/users/A-Tetarwal', '#Ashish', '#two');
+
+
+</script>
+
+</html>
