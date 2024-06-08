@@ -14,3 +14,21 @@ const addTwo = (num1, num2) => ({username: "Ahsihs"}); // returning object also 
 
 
 console.log(addTwo(3,5));
+
+
+// --------- additional ---------
+/*
+Summary
+Here's a quick summary of the different syntaxes:
+
+Function Declaration: function name() { ... }
+Function Expression: const name = function() { ... };
+Arrow Function: const name = () => { ... };
+Method Definition in an Object: const obj = { name() { ... } };
+Class Method: class C { name() { ... } }
+Generator Function: function* name() { yield ...; }
+IIFE: (function() { ... })();
+Async Function: async function name() { ... }
+Async Arrow Function: const name = async () => { ... };
+Each of these methods has its own specific use cases and advantages, depending on the context in which it is used.
+*/
