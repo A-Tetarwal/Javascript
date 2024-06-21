@@ -1,5 +1,3 @@
-const { log } = require("console");
-
 const name = "Ashish";
 let repoCount = "16";
 

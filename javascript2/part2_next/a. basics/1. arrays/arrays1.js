@@ -21,8 +21,8 @@ const array2 =new Array(1,2,3,4,5,6); //keep this syntax in mind
 // ***** push - pop *****
 
 // console.log(`before pushing: ${array2}`);
-// array2.push(10);  // push adds the elements, even array bhi push krskte
-// console.log(`after pushing 10: ${array2}`);
+array2.push(10);  // push adds the elements at the end of the array, even array bhi push krskte
+console.log(`after pushing 10: ${array2}`);
 
 // array2.pop(); //pop deletes the last element in the array
 // array2.pop();

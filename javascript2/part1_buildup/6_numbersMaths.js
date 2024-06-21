@@ -17,6 +17,6 @@
 // console.log(balance.toFixed(3));
 
 // toLocaleString() bade numbers me comma laga deta hai
-// const hundreds = 10000000;
-// console.log(hundreds.toLocaleString()); // by default english system
-// console.log(hundreds.toLocaleString('en-IN')); // Indian number system
+const hundreds = 10000000;
+console.log(hundreds.toLocaleString('en-IN')); // by default english system
+console.log(hundreds.toLocaleString('en')); // Indian number system

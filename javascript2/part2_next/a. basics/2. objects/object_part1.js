@@ -49,3 +49,5 @@ JsUser.greetingTwo = function(){
 console.log(JsUser.greeting); // function ka reference aayega
 console.log(JsUser.greeting()); //good
 console.log(JsUser.greetingTwo());
+
+// console.log(JsUser);

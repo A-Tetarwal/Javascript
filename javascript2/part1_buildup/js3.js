@@ -10,7 +10,7 @@ console.log(1+"1"); //javascript left to right string uthata hai aur datatypes k
 console.log(1+1+"1") // output =>21
 console.log("1"+1+1); //output =>111
 
-// use parenthesis for cases such as console/log(3 + 4 * 5 % 3);
+// use parenthesis for cases such as console.log(3 + 4 * 5 % 3);
 console.log(((3+4)*5)%3);
 
 
@@ -22,7 +22,7 @@ console.log(((3+4)*5)%3);
 // interesting
 console.log(null > 0)
 console.log(null == 0)
-console.log(null >= 0); // comparison operators > < >= =< converts the null into a number, treating it as 0. while equality operator == doesn't do so. null(0)>0 -->false and null(0)>=0 is true.
+console.log(null >= 0); // comparison operators > < >= <= convev rts the null into a number, treating it as 0. while equality operator == doesn't do so. null(0)>0 -->false and null(0)>=0 is true.
 
 // similar case with undefined, but undefined comared with 0 will give false in all comparisons.
 

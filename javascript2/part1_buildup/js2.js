@@ -9,6 +9,7 @@ score = "33"
 let valueInNumber = Number(score); //example of conversion
 console.log(valueInNumber); 
 console.log(typeof valueInNumber);
+console.log(Number("24"));
 
 console.log("\n");
 

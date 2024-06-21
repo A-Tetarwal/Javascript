@@ -11,6 +11,7 @@ function sayMyName(){
 //     console.log(num1+num2);
 // }
 
+// console.log(typeof sayMyName);
 
 // again
 
