@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: #ffffff;">
+    <h1 id="str">w3resource, by Ashish. </h1>
+
+    <script>
+        const element = document.querySelector("#str");
+        function rotate(element) {
+            setInterval(() => {
+                let text = element.textContent;
+                // text = text[text.length - 1] + text.substring(0, text.length - 1);
+                text = text.substring(1, text.length) + text[0];
+                element.textContent = text;
+                console.log(text);
+            }, 100);
+        }
+
+        rotate(element);
+    </script>
+</body>
+
+</html>

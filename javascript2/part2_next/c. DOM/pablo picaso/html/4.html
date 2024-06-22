@@ -30,7 +30,7 @@
     // funciton with optimized approach
     appOptimizedListItem = (langName) => {
         const li = document.createElement("li");
-        li.appendChild(document.createTextNode(langName));
+        li.appendChild(document.createTextNode(langName)); // this is the difference between current and previous method, li.appendchild pe jaiye hmesha
         document.querySelector(".language").appendChild(li);
     }
     appOptimizedListItem("golang");
