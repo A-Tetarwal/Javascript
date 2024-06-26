@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiply Divide</title>
+</head>
+<body style="background-color: black; color: white;">
+    <form action="">
+        <input type="number" id="n1" placeholder="number 1">
+        <input type="number" id="n2" placeholder="number 2">
+        <button id="Multiply">Multiply</button>
+        <button id="Divide">Divide</button>
+        <p> </p>
+        <h6></h6>
+    </form>
+</body>
+<script>
+document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+});
+
+document.querySelector("#Multiply").addEventListener("click", (e) => {
+    const m = document.querySelector("#n1").value;
+    const d = document.querySelector("#n2").value;
+    const p = document.querySelector("p");
+    p.innerText = `Product is ${m * d}`;
+});
+
+document.querySelector("#Divide").addEventListener("click", (e) => {
+    const m = document.querySelector("#n1").value;
+    const d = document.querySelector("#n2").value;
+    const p = document.querySelector("p");
+    p.innerText = `Division is ${m / d}`;
+});
+
+document.querySelector("h6").innerHTML = document.URL; // isse hum kisi bhi page ka url le skte hain;
+</script>
+</html>
