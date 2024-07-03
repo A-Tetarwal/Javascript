@@ -56,3 +56,13 @@ const obj = {name: 'Ashish', age: 20};
 const {age} = obj; // ye obj me se age naame ka variable nikal lega
 
 
+// ----- promise -----
+
+const ans = new Promise((resolve, reject) => {
+    if(true){
+        return resolve();
+    }
+    else{
+        return reject;
+    }
+})
