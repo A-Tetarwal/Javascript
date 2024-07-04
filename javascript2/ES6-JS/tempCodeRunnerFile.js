@@ -1,1 +1,1 @@
-return 12
+return rej;
