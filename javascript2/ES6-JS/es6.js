@@ -110,13 +110,30 @@ new Promise((res, rej) => {
     });
   })
   .catch((error) => console.log(error));
-//
+// oopar wale ko dusre tarike se bhi kr skte hain
+// see
+
+var anss = new Promise(function (res, rej) {
+  return res('sabse pehle ghar par aao');
+})
+
+var p2 = anss.then((data) => {
+  console.log(data);
+  return new Promise(function (res, rej) {
+    return res('gate kholo aur gate lgao');
+  })
+})
+// and aage aise hi .then aur andar return krte raho jb tk async task poora na ho jaye
 
 // _____ Async - Await _____
-
-abcd = async () => {
-  fetch(``);
-};
+/*
+async await isliye tb use krte hain jb kisi third party se kaam krwana ho
+*/
+async function abcd() {
+  let raw = await fetch('https://randomuser.me/api/');
+  let ans = await raw.json();  // idhar await nahin lgayenge to pending promise dikhayega, await lgane ka mtlb jb tk kaam nhi ho jata, usi line pe rukey raho
+  console.log(ans);
+}
 
 // _____ try-catch _____
 

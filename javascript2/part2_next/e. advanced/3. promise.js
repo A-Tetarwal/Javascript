@@ -109,7 +109,7 @@ getAllUsers();
 // using promises, maybe? with some more data
 fetch('https://leetcode-stats-api.herokuapp.com/KG-Profile')
 .then((user) => { // user or response, kuchh bhi bolo
-  return user.json();
+  return user.json(); // ek then me json me convert hoga, ab is then se jo cheez mili hai uss par then lgana hai taaki data nikaal ske json se
 })
 .then((data) => {
   console.log(data);
